@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour {
     [SerializeField]
     private float sensitivityY = 1.0f;
 
+    [SerializeField]
+    private Camera playerCamera;
+
     private PlayerMotor motor;
 
     void Start()
@@ -30,9 +33,10 @@ public class PlayerController : MonoBehaviour {
         // Apply Movement
         motor.Move(velocity);
 
-        float yRot = Input.GetAxisRaw("Mouse X");
+        // float yRot = Input.GetAxisRaw("Mouse X");
+        float yRot = playerCamera.transform.eulerAngles.y;
 
-        Vector3 rot = new Vector3(0f, yRot, 0f) * sensitivityY;
+        Vector3 rot = new Vector3(0f, yRot, 0f);
 
         motor.Rotate(rot);
     }

@@ -240,6 +240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   sensitivityY: 5
+  playerCamera: {fileID: 1411753598}
 --- !u!1 &936893878
 GameObject:
   m_ObjectHideFlags: 0
